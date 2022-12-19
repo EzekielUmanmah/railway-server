@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require('path');
 const Rollbar = require('rollbar');
 
-const { ROLLBAR_KEY } = process.env;
+const { ROLLBAR_KEY, PORT } = process.env;
 const { botsArr, playerRecord } = require('./data');
 const { shuffleArray } = require('./utils');
 
@@ -105,6 +105,6 @@ app.get('/api/player', (req, res) => {
   }
 });
 
-app.listen(4000, () => {
-  console.log(`Listening on 4000`);
+app.listen(PORT, () => {
+  console.log(`Listening on ${PORT}`);
 });
